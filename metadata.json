@@ -1,0 +1,5 @@
+{
+  "name": "LEXAI",
+  "description": "An AI legal assistant for Indian Law, Constitution, and IPC sections powered by a local Ollama model.",
+  "requestFramePermissions": []
+}

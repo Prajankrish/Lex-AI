@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEXAI - Legal Intelligence Assistant</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- Inter Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Custom Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              zinc: {
+                50: '#fafafa',
+                100: '#f4f4f5',
+                200: '#e4e4e7',
+                300: '#d4d4d8',
+                400: '#a1a1aa',
+                500: '#71717a',
+                600: '#52525b',
+                700: '#3f3f46',
+                800: '#27272a',
+                900: '#18181b',
+                950: '#09090b',
+              },
+              charcoal: {
+                50: '#f6f6f6',
+                100: '#e7e7e7',
+                200: '#d1d5db',
+                300: '#9ca3af',
+                400: '#6b7280',
+                500: '#4b5563',
+                600: '#374151',
+                700: '#1f2937',
+                800: '#111827',
+                900: '#030712',
+              },
+              violet: {
+                50: '#faf5ff',
+                100: '#f3e8ff',
+                200: '#e9d5ff',
+                300: '#d8b4fe',
+                400: '#b794f6',
+                500: '#9f7aea',
+                600: '#805ad5',
+                700: '#6b46c1',
+                800: '#553399',
+                900: '#3d2667',
+              },
+              gray: {
+                50: '#f9fafb',
+                100: '#f3f4f6',
+                200: '#e5e7eb',
+                300: '#d1d5db',
+                400: '#9ca3af',
+                500: '#6b7280',
+                600: '#4b5563',
+                700: '#374151',
+                800: '#1f2937',
+              },
+              brand: {
+                400: '#b794f6',
+                500: '#9f7aea',
+                600: '#805ad5',
+                700: '#6b46c1',
+              },
+              chat: {
+                bg: '#1f2937',
+                sidebar: '#111827',
+                input: '#2d3748',
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+      /* ChatGPT-like scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #424242;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #525252;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #3f3f46;
+      }
+
+      /* Typing animation cursor */
+      .typing-cursor::after {
+        content: '▋';
+        animation: blink 1s step-start infinite;
+        margin-left: 2px;
+        color: #2563eb;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-chat-bg text-zinc-100 antialiased h-screen overflow-hidden font-sans selection:bg-brand-600/30"
+  >
+    <div id="root" class="h-full"></div>
+
+    <!-- Vite React Entry Point -->
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>
